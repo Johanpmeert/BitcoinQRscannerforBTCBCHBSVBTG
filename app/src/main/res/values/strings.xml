@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">QR scanner for BTC,BCHN,BSV,BTG</string>
+    <string name="QRscansuccess">QR code successfully scanned</string>
+    <string name="Pastesuccess">Successful paste from clipboard</string>
+    <string name="Clipempty">Clipboard empty or does not contain text</string>
+    <string name="validBTG">This is a valid BTG address</string>
+    <string name="validBTC">This is a valid BTC/BSV address</string>
+    <string name="validB32">This is a valid Bech32 address</string>
+    <string name="validBCH">This is a valid BCHN address</string>
+    <string name="invalidaddress">Not a valid BTC/BCHN/BSV/BTG address</string>
+    <string name="previewcleared">Preview cleared</string>
+    <string name="none">none</string>
+    <string name="copyclip">Successful copy to clipboard</string>
+    <string name="addressprevempty">Address preview is empty</string>
+    <string name="illegalchar">Illegal character in address</string>
+    <string name="colonbch">colon character only allowed with bitcoincash:</string>
+    <string name="addrok">Simple address check ok</string>
+    <string name="errorlookup">Error in lookup</string>
+</resources>

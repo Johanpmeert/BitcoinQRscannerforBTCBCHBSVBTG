@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/buttonScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="OnClickScan"
+        android:text="SCAN"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPaste"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <Button
+        android:id="@+id/buttonPaste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:onClick="OnClickPaste"
+        android:text="PASTE"
+        app:layout_constraintBottom_toTopOf="@+id/editTextQRCode"
+        app:layout_constraintEnd_toStartOf="@+id/buttonClear"
+        app:layout_constraintStart_toEndOf="@+id/buttonScan"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <Button
+        android:id="@+id/buttonCheckAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="OnClickCheckAddress"
+        android:text="Check address"
+        app:layout_constraintEnd_toStartOf="@+id/buttonGetValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextQRCode" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="BTC value:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textViewBTCvalue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStatus" />
+
+    <Button
+        android:id="@+id/buttonGetValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:enabled="false"
+        android:onClick="OnClickGetValue"
+        android:text="Get Value"
+        app:layout_constraintEnd_toStartOf="@+id/buttonQuit"
+        app:layout_constraintStart_toEndOf="@+id/buttonCheckAddress"
+        app:layout_constraintTop_toBottomOf="@+id/editTextQRCode" />
+
+    <TextView
+        android:id="@+id/textViewBTCvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="0.0"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStatus" />
+
+    <TextView
+        android:id="@+id/textViewBTCaddress"
+        android:layout_width="275dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="monospace"
+        android:text="bitcoin address preview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="BCHN value:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBTCaddress" />
+
+    <TextView
+        android:id="@+id/textViewBCHvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="0.0"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBTCaddress" />
+
+    <TextView
+        android:id="@+id/textViewBCHaddress"
+        android:layout_width="275dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="monospace"
+        android:text="bitcoin Cash address preview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="BSV value:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textViewBSVvalue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBCHaddress" />
+
+    <TextView
+        android:id="@+id/textViewBSVvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="0.0"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBCHaddress" />
+
+    <TextView
+        android:id="@+id/textViewBSVaddress"
+        android:layout_width="275dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="monospace"
+        android:text="bitcoin SV address preview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="BTG value:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textViewBTGvalue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBSVaddress" />
+
+    <TextView
+        android:id="@+id/textViewBTGvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="0.0"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBSVaddress" />
+
+    <TextView
+        android:id="@+id/textViewBTGaddress"
+        android:layout_width="275dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="monospace"
+        android:text="bitcoin Gold address preview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <Button
+        android:id="@+id/buttonCopyBTC"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:enabled="false"
+        android:onClick="OnClickCopyBTC"
+        android:text="Copy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewBTCvalue" />
+
+    <Button
+        android:id="@+id/buttonCopyBCH"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:enabled="false"
+        android:onClick="OnClickCopyBCH"
+        android:text="Copy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewBCHvalue" />
+
+    <Button
+        android:id="@+id/buttonCopyBSV"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:enabled="false"
+        android:onClick="OnClickCopyBSV"
+        android:text="Copy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewBSVvalue" />
+
+    <Button
+        android:id="@+id/buttonCopyBTG"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:enabled="false"
+        android:onClick="OnClickCopyBTG"
+        android:text="Copy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewBTGvalue" />
+
+    <Button
+        android:id="@+id/buttonClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:onClick="OnClickClear"
+        android:text="CLEAR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonPaste"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="Status:"
+        app:layout_constraintEnd_toStartOf="@+id/textViewStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCheckAddress" />
+
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="324dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="none"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCheckAddress" />
+
+    <Button
+        android:id="@+id/buttonQuit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="OnClickQuit"
+        android:text="QUIT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonGetValue"
+        app:layout_constraintTop_toBottomOf="@+id/editTextQRCode" />
+
+    <EditText
+        android:id="@+id/editTextQRCode"
+        android:layout_width="374dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:inputType="textPersonName"
+        android:text="bitcoin address preview"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonScan" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bchnusd"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="0 $"
+        android:textAlignment="viewEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCopyBCH" />
+
+    <TextView
+        android:id="@+id/btcusd"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="0 $"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCopyBTC" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="Total approximate value:"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toStartOf="@+id/totalvalue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBTGaddress" />
+
+    <TextView
+        android:id="@+id/totalvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="0 $"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBTGaddress" />
+
+    <TextView
+        android:id="@+id/bsvusd"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="0 $"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCopyBSV" />
+
+    <TextView
+        android:id="@+id/btgusd"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="0 $"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCopyBTG" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
